@@ -1,12 +1,33 @@
-<div id="<%= dom_id list %>">
-  <p>
-    <strong>To do item:</strong>
-    <%= list.description %>
-  </p>
+  <div id="<%= dom_id list %>">
 
-  <p>
-    <strong>Completed:</strong>
-    <%= list.completed %>
-  </p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <p>
+          <% if list.completed %>
+          <th><strong>To do item:</strong>
+            <td class="striker"><%= list.description %>
+              <p>
+                <th><strong>Completed:</strong>
+                  <td><%= list.completed %>
+              </p>
+
+            <tr>
+              <%else %>
+                <th><strong>To do item:</strong>
+                <td><%= list.description %>
+                </p>
+              <% end %>
+
+
+                <p>
+                  <th><strong>Completed:</strong>
+                    <td><%= list.completed %>
+                </p>
+              <tr>
+            </thead>
+
+
+  </table>
 
 </div>
